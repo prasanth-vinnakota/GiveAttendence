@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.prasanth.attendance">
+
+<uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application
+        android:name=".context.ApplicationContext"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/attendance_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/attendance_app"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".StudentAttendanceDates"/>
+        <activity android:name=".CondonationOrDetainedList" />
+        <activity
+            android:name=".SelectStudentAndStatusActivity"
+            android:label="Add / Update Attendance" />
+        <activity android:name=".ViewAttendanceByDateActivity" />
+        <activity
+            android:name=".ViewClassesDatesActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Dates of Classes"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".ViewLogActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Log"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".UpdateFacultyActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Update Faculty Details"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".ViewFacultyDetailsActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Faculty Details"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".ViewAttendanceByPercentage"
+            android:icon="@mipmap/attendance_app"
+            android:label="Students Attendance With Percentage"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".AddFacultyActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Register Faculty"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".UpdateStudentActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Update Student Details"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".ViewStudentActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="List of Students"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".ViewStudentDetailsActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="View Student Details"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".AddStudentActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Register Student"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".AddAttendanceActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Add Attendance"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".TicTacToeActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Tic Tac Toe"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".AddAttendanceSessionActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Faculty Dashboard"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".AdminActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Admin Dashboard"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".LoginActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Login Page"
+            android:roundIcon="@mipmap/attendance_app" />
+        <activity
+            android:name=".MainActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="Simple Attendance App"
+            android:roundIcon="@mipmap/attendance_app">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ViewAttendanceByFacultyActivity"
+            android:icon="@mipmap/attendance_app"
+            android:label="View Attendance"
+            android:roundIcon="@mipmap/attendance_app" />
+    </application>
+
+</manifest>

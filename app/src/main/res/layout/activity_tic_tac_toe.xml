@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10sp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    tools:context=".TicTacToeActivity">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="10sp">
+
+        <TextView
+            android:id="@+id/player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_1"
+            android:textSize="30sp"
+            android:freezesText="true"
+            android:textColor="#FFF"/>
+
+        <TextView
+            android:id="@+id/player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/player1"
+            android:layout_marginTop="24dp"
+            android:text="@string/player_2"
+            android:textSize="30sp"
+            android:freezesText="true"
+            android:textColor="#FFF"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="25sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30sp"
+            android:elevation="10sp">
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/exit"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="25sp"
+            android:layout_below="@+id/cardView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30sp"
+            android:elevation="10sp"
+            android:layout_marginTop="20sp">
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="@string/reset" />
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button00"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:textSize="50sp"
+            android:freezesText="true"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50sp"
+            android:freezesText="true"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50sp"
+            android:freezesText="true"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10sp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50sp"
+            android:freezesText="true"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50sp"
+            android:freezesText="true"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50sp"
+            android:freezesText="true"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10sp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50sp"
+            android:freezesText="true"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button21"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50sp"
+            android:freezesText="true"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50sp"
+            android:freezesText="true"
+            android:background="@android:color/transparent"/>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

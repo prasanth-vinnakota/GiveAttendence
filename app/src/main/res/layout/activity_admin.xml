@@ -1,0 +1,248 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminActivity"
+    android:padding="20sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="10sp"
+                    android:layout_marginStart="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120sp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10sp">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/addStudent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:drawableTop="@mipmap/add_user"
+                                android:text="@string/add_student" />
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/viewStudentDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:drawableTop="@mipmap/view_user"
+                                android:text="@string/view_students"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120sp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10sp">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/addFaculty"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableTop="@mipmap/add_user"
+                                android:background="@android:color/transparent"
+                                android:text="@string/add_faculty"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/viewFacultyDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:drawableTop="@mipmap/view_user"
+                                android:text="@string/view_faculty_details"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120sp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10sp">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/viewLog"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableTop="@mipmap/log"
+                                android:background="@android:color/transparent"
+                                android:text="@string/view_log"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/viewSelectedLog"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:drawableTop="@mipmap/log"
+                                android:text="@string/view_selected_log"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120sp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10sp">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/viewCondOrDetained"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableTop="@mipmap/list"
+                                android:background="@android:color/transparent"
+                                android:text="@string/view_condonation_detained_list"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/changeUsernameAndPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:drawableTop="@mipmap/user"
+                                android:text="@string/change_username_and_password"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120sp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10sp">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/clearData"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableTop="@mipmap/clean"
+                                android:background="@android:color/transparent"
+                                android:text="@string/clear_data"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0sp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10sp"
+                            android:background="@android:color/white">
+
+                            <Button
+                                android:id="@+id/logout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:drawableTop="@mipmap/log_out"
+                                android:text="@string/logout"
+                                android:layout_gravity="center"/>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+    </ScrollView>

@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewStudentDetailsActivity" >
+
+    <TextView
+        android:drawableTop="@mipmap/id"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold|italic"
+        android:textColor="#000"
+        android:text="@string/select_department_and_section"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50sp">
+
+
+    <Spinner
+        android:id="@+id/selectStudentDepartment"
+        android:layout_width="300sp"
+        android:layout_height="30sp"
+        android:layout_gravity="center"
+        android:background="#11000000"/>
+
+    <Spinner
+        android:id="@+id/selectStudentSection"
+        android:layout_width="300sp"
+        android:layout_height="30sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:background="#11000000"/>
+
+        <LinearLayout
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50sp"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10sp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10sp"
+                    android:background="@android:color/white">
+
+                    <Button
+                        android:id="@+id/submitStudentDepartmentAndSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/submit"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:text="@string/submit" />
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:orientation="horizontal"
+                android:layout_marginTop="20sp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10sp"
+                    android:background="@android:color/white">
+
+                    <Button
+                        android:id="@+id/viewAllStudents"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/list_of_users"
+                        android:background="@android:color/transparent"
+                        android:text="@string/get_all_students"
+                        android:layout_gravity="center"/>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
