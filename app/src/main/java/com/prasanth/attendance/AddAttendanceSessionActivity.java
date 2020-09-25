@@ -1,6 +1,7 @@
 package com.prasanth.attendance;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -17,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.prasanth.attendance.beans.AttendanceBean;
@@ -36,6 +38,7 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
 
     private EditText mDate;
     private EditText mSubject;
+    private EditText mTime;
 
     private Spinner mDepartment;
     private Spinner mSection;
@@ -46,6 +49,8 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
     private int day;
     private int month;
     private int year;
+    private int hour;
+    private int min;
 
     private Integer[] sections = new Integer[]{1, 2, 3, 4};
 
@@ -68,14 +73,18 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
 
         //initialize ImageButton
         ImageButton mDateImageButton = findViewById(R.id.dateImageButton);
+        ImageButton mTimeImageButton = findViewById(R.id.timeImageButton);
 
         //initialize EditText
         mDate = findViewById(R.id.selectDay);
         mDate.setEnabled(false);
+        mTime = findViewById(R.id.selectTime);
+        mTime.setEnabled(false);
         mSubject = findViewById(R.id.subject);
 
         //get current Date and time
         mDate.setText(new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date()));
+        mTime.setText(new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date()));
         final String eventDate = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date());
 
         //initialize Spinner
@@ -135,6 +144,9 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
         day = calendar.get(Calendar.DAY_OF_MONTH);
         month = calendar.get(Calendar.MONTH);
         year = calendar.get(Calendar.YEAR);
+        hour = calendar.get(Calendar.HOUR);
+        min = calendar.get(Calendar.MINUTE);
+
 
         //set OnClickListener to Button
         mDateImageButton.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +158,23 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
 
                 //show dialog
                 datePickerDialog.show();
+            }
+        });
+
+        mTimeImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TimePickerDialog timePickerDialog = new TimePickerDialog(AddAttendanceSessionActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                        String timeString = hourOfDay+":"+minute;
+                        mTime.setText(timeString);
+                    }
+                },hour,min,true);
+
+                timePickerDialog.show();
             }
         });
 
@@ -294,6 +323,12 @@ public class AddAttendanceSessionActivity extends AppCompatActivity {
 
                 //send session to AddAttendanceActivity
                 intent.putExtra("sessionId", sessionId);
+
+                //send date to AddAttendanceActivity
+                intent.putExtra("date", mDate.getText().toString());
+
+                //send time to AddAttendanceActivity
+                intent.putExtra("time", mTime.getText().toString());
 
                 //start AddAttendanceActivity
                 startActivity(intent);

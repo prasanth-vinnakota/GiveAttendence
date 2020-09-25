@@ -32,7 +32,7 @@ public class ViewAttendanceByFacultyActivity extends AppCompatActivity  {
         findViewById(R.id.card).setVisibility(View.GONE);
 
         //add title to list
-        attendanceList.add("STUDENT ID  STATUS");
+        attendanceList.add("STUDENT ID  DATE TIME STATUS");
 
         //get attendance from Context
         final ArrayList<AttendanceBean> attendanceBeans = ApplicationContext.getInstance().getAttendanceBeanList();
@@ -46,7 +46,7 @@ public class ViewAttendanceByFacultyActivity extends AppCompatActivity  {
             if(attendanceBean != null){
 
                 //assign string
-                string = attendanceBean.getAttendanceStudentId()+"  "+attendanceBean.getStatus();
+                string = attendanceBean.getAttendanceStudentId()+"  "+attendanceBean.getDate() +"  "+attendanceBean.getTime()+"  "+attendanceBean.getStatus();
 
                 //add String to list
                 attendanceList.add(string);

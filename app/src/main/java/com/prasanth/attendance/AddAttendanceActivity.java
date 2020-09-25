@@ -26,6 +26,7 @@ public class AddAttendanceActivity extends AppCompatActivity {
     private ArrayList<StudentBean> studentBeans;
 
     private int sessionId;
+    private String date,time;
 
     //create a DataBaseAdapter object
     private DataBaseAdapter dataBaseAdapter = new DataBaseAdapter(this);
@@ -37,6 +38,12 @@ public class AddAttendanceActivity extends AppCompatActivity {
 
         //get session id from intent
         sessionId = getIntent().getIntExtra("sessionId", 0);
+
+        //get date from intent
+        date = getIntent().getStringExtra("date");
+
+        //get time from intent
+        time = getIntent().getStringExtra("time");
 
         //initialize ListView object
         ListView mStudentList = findViewById(R.id.studentList);
@@ -120,6 +127,8 @@ public class AddAttendanceActivity extends AppCompatActivity {
                         attendanceBean.setAttendanceSessionId(sessionId);
                         attendanceBean.setAttendanceStudentId(studentBean.getStudentId());
                         attendanceBean.setStatus(studentBean.getStatus());
+                        attendanceBean.setDate(date);
+                        attendanceBean.setTime(time);
 
                         //add attendance to database
                         done = dataBaseAdapter.addAttendance(attendanceBean);

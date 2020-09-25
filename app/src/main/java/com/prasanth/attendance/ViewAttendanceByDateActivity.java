@@ -47,7 +47,7 @@ public class ViewAttendanceByDateActivity extends AppCompatActivity {
         for (AttendanceBean attendanceBean : attendanceBeans) {
 
             //get id and status from attendance bean
-            String s = attendanceBean.getAttendanceStudentId() + " - " + attendanceBean.getStatus();
+            String s = attendanceBean.getAttendanceStudentId() + " - " + attendanceBean.getTime() +" - "+ attendanceBean.getStatus();
 
             //add String object to list
             attendanceList.add(s);

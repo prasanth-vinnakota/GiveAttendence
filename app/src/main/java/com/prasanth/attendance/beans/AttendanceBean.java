@@ -5,6 +5,8 @@ public class AttendanceBean {
     private int attendanceSessionId;
     private String attendanceStudentId;
     private String status;
+    private String date;
+    private String time;
 
     public int getAttendanceSessionId() {
         return attendanceSessionId;
@@ -28,6 +30,22 @@ public class AttendanceBean {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
 

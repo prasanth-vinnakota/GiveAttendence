@@ -15,6 +15,7 @@ import com.prasanth.attendance.beans.FacultyBean;
 import com.prasanth.attendance.beans.StudentBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DataBaseAdapter extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Attendance";
@@ -57,6 +58,8 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
     private static final String SESSION_ID = "attendance_session_id";
     private static final String ATTENDANCE_STUDENT_ID = "attendance_student_id";
     private static final String ATTENDANCE_STATUS = "attendance_status";
+    private static final String ATTENDANCE_DATE = "attendance_date";
+    private static final String ATTENDANCE_TIME = "attendance_time";
 
     private Context context;
 
@@ -99,7 +102,9 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
         String attendanceQuery = "create table " + ATTENDANCE_TABLE + " (" +
                 SESSION_ID + " integer, " +
                 ATTENDANCE_STUDENT_ID + " text, " +
-                ATTENDANCE_STATUS + " text " + ")";
+                ATTENDANCE_STATUS + " text, " +
+                ATTENDANCE_DATE + " date, " +
+                ATTENDANCE_TIME + " time )";
 
         try {
 
@@ -149,7 +154,9 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
         String attendanceQuery = "create table " + ATTENDANCE_TABLE + " (" +
                 SESSION_ID + " integer, " +
                 ATTENDANCE_STUDENT_ID + " text, " +
-                ATTENDANCE_STATUS + " text " + ")";
+                ATTENDANCE_STATUS + " text, " +
+                ATTENDANCE_DATE + " date, " +
+                ATTENDANCE_TIME +" time )";
 
         try {
 
@@ -208,7 +215,9 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
         String attendanceQuery = "create table " + ATTENDANCE_TABLE + " (" +
                 SESSION_ID + " integer, " +
                 ATTENDANCE_STUDENT_ID + " text, " +
-                ATTENDANCE_STATUS + " text " + ")";
+                ATTENDANCE_STATUS + " text, " +
+                ATTENDANCE_DATE + " date, " +
+                ATTENDANCE_TIME +" time )";
 
         try {
             //create tables
@@ -870,10 +879,12 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         //query to add attendance
-        String addAttendanceQuery = "insert into " + ATTENDANCE_TABLE + " ( " + SESSION_ID + "," + ATTENDANCE_STUDENT_ID + "," + ATTENDANCE_STATUS + ") values ('" +
+        String addAttendanceQuery = "insert into " + ATTENDANCE_TABLE + " ( " + SESSION_ID + "," + ATTENDANCE_STUDENT_ID + "," + ATTENDANCE_STATUS + "," + ATTENDANCE_DATE + "," + ATTENDANCE_TIME + ") values ('" +
                 attendanceBean.getAttendanceSessionId() + "', '" +
                 attendanceBean.getAttendanceStudentId() + "', '" +
-                attendanceBean.getStatus() + "' )";
+                attendanceBean.getStatus() + "', '" +
+                attendanceBean.getDate() + "', '" +
+                attendanceBean.getTime()+ "' )";
 
         try {
 
@@ -948,6 +959,8 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
                         attendanceBean.setAttendanceSessionId(Integer.parseInt(cursor1.getString(0)));
                         attendanceBean.setAttendanceStudentId(cursor1.getString(1));
                         attendanceBean.setStatus(cursor1.getString(2));
+                        attendanceBean.setDate(cursor1.getString(3));
+                        attendanceBean.setTime(cursor1.getString(4));
 
                         //add AttendanceBean object to list
                         attendanceBeans.add(attendanceBean);
@@ -994,7 +1007,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
 
-                //create AttendanceBean object
+                /*create AttendanceBean object
                 AttendanceBean dateAttendanceBean = new AttendanceBean();
 
                 dateAttendanceBean.setAttendanceSessionId(0);
@@ -1002,7 +1015,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
                 dateAttendanceBean.setStatus(cursor.getString(4));
 
                 //add AttendanceBean object to list
-                attendanceBeans.add(dateAttendanceBean);
+                attendanceBeans.add(dateAttendanceBean);*/
 
                 //get session id from database
                 attendanceSessionId = Integer.parseInt(cursor.getString(0));
@@ -1024,6 +1037,8 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
                         attendanceBean.setAttendanceSessionId(Integer.parseInt(cursor1.getString(0)));
                         attendanceBean.setAttendanceStudentId(cursor1.getString(1));
                         attendanceBean.setStatus(cursor1.getString(2));
+                        attendanceBean.setDate(cursor1.getString(3));
+                        attendanceBean.setTime(cursor1.getString(4));
 
                         //add AttendanceBean object to list
                         attendanceBeans.add(attendanceBean);
@@ -1083,7 +1098,14 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
             //close database
             sqLiteDatabase.close();
 
-            return returnString;
+            ArrayList<String> newReturnList = new ArrayList<>();
+            for (String newReturn : returnString){
+                if (!newReturnList.contains(newReturn)){
+                    newReturnList.add(newReturn);
+                }
+            }
+
+            return newReturnList;
         }
 
         //close cursor
@@ -1345,7 +1367,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
             do {
 
                 //create query
-                String queryToGetStatus = "select " + ATTENDANCE_STATUS + " from " + ATTENDANCE_TABLE + " where " + SESSION_ID + " = " + cursor.getInt(0) + " and " + ATTENDANCE_STUDENT_ID + " = '" + student_id + "'";
+                String queryToGetStatus = "select * from " + ATTENDANCE_TABLE + " where " + SESSION_ID + " = " + cursor.getInt(0) + " and " + ATTENDANCE_STUDENT_ID + " = '" + student_id + "'";
 
                 Cursor cursor1;
                 try {
@@ -1364,7 +1386,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
                 if (cursor1.moveToFirst()) {
 
                     //add string to list
-                    returnString.add(cursor.getString(1) + " - " + cursor1.getString(0));
+                    returnString.add(cursor1.getString(3) + " - " + cursor1.getString(4) + " - "+ cursor1.getString(2));
 
                 }
 
