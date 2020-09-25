@@ -163,7 +163,7 @@ public class AddAttendanceActivity extends AppCompatActivity {
         builder.setTitle("Credits");
 
         //set builder message
-        builder.setMessage("App Credits : Prasanth Vinnakota \nIcon Credits www.flaticon.com");
+        builder.setMessage("App Credits : Prasanth Vinnakota and Nihara Katala\nIcon Credits www.flaticon.com");
 
         //set builder title
         builder.setIcon(R.mipmap.credits);
